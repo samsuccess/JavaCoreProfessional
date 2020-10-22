@@ -1,5 +1,6 @@
 package homework1;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -14,10 +15,23 @@ public class Main {
         System.out.println("Результат замены: " + Arrays.toString(arr));
     }
 
+    //    можно и с обобщением
+    public static <T> void changeVal1(T[] arr, int i, int j) {
+        T tmp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = tmp;
+    }
+
     public static <T> void asList(T[] arr) {
         ArrayList<T> arrayList = new ArrayList<>(Arrays.asList(arr));
         System.out.println("Результат преобразования: " + Arrays.toString(arr));
     }
+
+    //    ещё вариант преобразования
+    public static <T> ArrayList<T> arraytoList(T[] arr) {
+        return new ArrayList<>(Arrays.asList(arr));
+    }
+
 
     public static void main(String[] args) {
 
